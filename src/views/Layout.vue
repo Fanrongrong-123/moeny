@@ -1,22 +1,21 @@
 <template>
-  <div>
-    <Layout>
-      <p> money.vue</p>
-    </Layout>
+  <div class="money">
+    <div class="nav-wrap">
+      <slot></slot>
+    </div>
+    <Nav/>
   </div>
 </template>
 
 <script lang="ts">
 import Nav from '@/views/Nav.vue';
-import Layout from '@/views/Layout.vue';
-
 export default {
-  name: 'Money',
-  components: {Layout},
+  name: 'Layout',
+  components: {Nav}
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .money {
   border: 1px solid green;
   display: flex;
@@ -28,5 +27,4 @@ export default {
   flex-grow: 1;
   overflow: auto;
 }
-
 </style>
