@@ -7,7 +7,6 @@
 </template>
 
 <script lang="ts">
-import Nav from '@/views/Nav.vue';
 import Layout from '@/views/Layout.vue';
 
 export default {
@@ -15,7 +14,3 @@ export default {
   components: {Layout},
 };
 </script>
-
-<style lang="scss" scoped>
-
-</style>
