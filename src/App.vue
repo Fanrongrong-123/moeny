@@ -1,9 +1,14 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div>
+    <router-view/>
+    <div>
+      <router-link to="Money">记账</router-link>
+      |
+      <router-link to="Labels">标签</router-link>
+      |
+      <router-link to="Statistics">统计</router-link>
+    </div>
   </div>
-  <router-view/>
 </template>
 
 <style lang="scss">
