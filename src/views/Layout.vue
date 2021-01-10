@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import Nav from '@/views/Nav.vue';
+import Nav from '@/components/Nav.vue';
 export default {
   name: 'Layout',
   components: {Nav}
