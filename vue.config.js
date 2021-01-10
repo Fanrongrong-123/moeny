@@ -4,7 +4,6 @@ module.exports = {
   lintOnSave: false,
   chainWebpack: config => {
     const dir = path.resolve(__dirname, 'src/assets/icons')
-
     config.module
       .rule('svg-spite')//规则
       .test(/\.svg$/)//.svg结尾的全部

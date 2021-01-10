@@ -4,7 +4,3 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
-declare module "*.svg" {
-  const content: string;
-  export default content;
-}
