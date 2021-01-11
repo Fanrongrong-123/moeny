@@ -1,5 +1,5 @@
 <template>
-  <div class="money">
+  <div class="lay">
     <div class="nav-wrap">
       <slot></slot>
     </div>
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style scoped>
-.money {
+.lay {
   border: 1px solid green;
   display: flex;
   flex-direction: column;

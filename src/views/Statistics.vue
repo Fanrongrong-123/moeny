@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import Layout from '@/views/Layout.vue';
+import Layout from '@/components/Layout.vue';
 
 export default {
   name: 'Statistics',
