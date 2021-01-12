@@ -1,7 +1,7 @@
 <template>
   <div class="lay">
-    <div class="nav-wrap">
-      <slot></slot>
+    <div class="nav-wrap" :class="classPrefix && `${classPrefix}-content`">
+      <slot/>
     </div>
     <Nav/>
   </div>
@@ -11,13 +11,13 @@
 import Nav from '@/components/Nav.vue';
 export default {
   name: 'Layout',
-  components: {Nav}
+  components: {Nav},
+  props:['classPrefix']
 };
 </script>
 
 <style scoped>
 .lay {
-  border: 1px solid green;
   display: flex;
   flex-direction: column;
   height: 100vh;
