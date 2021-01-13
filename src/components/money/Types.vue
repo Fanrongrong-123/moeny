@@ -1,31 +1,63 @@
 <template>
   <div>
     <ul class="types">
-      <li :class="type==='-' && 'selected'" @click="xxx('-')">支出</li>
-      <li :class="type==='+' && 'selected'" @click="xxx('+')">收入</li>
+      <li :class="type==='-' && 'selected'" @click="selectType('-')">支出</li>
+      <li :class="type==='+' && 'selected'" @click="selectType('+')">收入</li>
     </ul>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Types',
-  data() {
-    return {
-      type: '-'  //'-'为支出 '+'为收入，type只能是其中之一
+//用ts写的type
+<script lang="ts">
+import Vue from 'vue';
+import {Component, Prop} from 'vue-property-decorator';
+
+@Component
+export default class Types extends Vue {
+
+  type = '-';
+
+  selectType(type: string) {
+    if (type !== '-' && type !== '+') {
+      throw new Error('type is known');
     }
-  },
-  methods: {
-    xxx(type) {
-      if (type !== '-' && type !== '+') {
-        throw new Error('type is unknown')
-      }
-      return this.type = type
+    this.type = type;
+  }
+
+  @Prop(Number) mmm: number | undefined;
+
+  mounted() {
+    if (this.mmm === undefined) {
+      console.log(this.mmm);
+    } else {
+      console.log(this.mmm.toString());
     }
   }
 
 }
+
 </script>
+
+//用js写的type
+<!--<script>-->
+<!--export default {-->
+<!--  name: 'Types',-->
+<!--  data() {-->
+<!--    return {-->
+<!--      type: '-'  //'-'为支出 '+'为收入，type只能是其中之一-->
+<!--    }-->
+<!--  },-->
+<!--  methods: {-->
+<!--    selectType(type) {-->
+<!--      if (type !== '-' && type !== '+') {-->
+<!--        throw new Error('type is unknown')-->
+<!--      }-->
+<!--      return this.type = type-->
+<!--    }-->
+<!--  }-->
+
+<!--}-->
+<!--</script>-->
 
 <style lang="scss" scoped>
 .types {
