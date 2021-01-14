@@ -3,9 +3,7 @@
     <label class="notes">
       <span class="name">备注：</span>
       <input type="text" placeholder="在这里输入备注"
-             :value='value'
-             @input='value=$event.target.value'>
-
+             v-model="value">
     </label>
   </div>
 </template>
