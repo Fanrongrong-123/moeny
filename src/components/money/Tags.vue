@@ -1,7 +1,7 @@
 <template>
   <div class="tags">
     <div class="new">
-      <button>新增标签</button>
+      <button @click="createTags">新增标签</button>
     </div>
     <!--tag存在于selectedTags，selected就为选中状态-->
     <ul class="current">
@@ -30,6 +30,14 @@ export default {
         this.selectedTags.splice(index, 1)
       } else {
         this.selectedTags.push(tag)
+      }
+    },
+    createTags() {
+      const name = window.prompt('请输入你的标签名')
+      if (name === '') {
+        alert('标签名不能为空')
+      }else {
+        this.$emit('update:dataSource',[...this.dataSource,name])
       }
     }
   }

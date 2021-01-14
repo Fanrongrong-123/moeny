@@ -2,7 +2,10 @@
   <Layout class-prefix="layout">
     <NumberPad/>
     <Notes/>
-    <Tags :data-source="tags"/>
+<!--    <Tags :data-source="tags"/>-->
+<!--新语法包含了<Tags :data-source.sync="tags"/>的功能，将$emit上的值传给tags-->
+    <Tags v-model:data-source="tags"/>
+
     <Types/>
   </Layout>
 </template>
