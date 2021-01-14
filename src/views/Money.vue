@@ -1,16 +1,13 @@
 <template>
-  <Layout class-prefix="layout">
-    <NumberPad/>
-    <Notes/>
-<!--    <Tags :data-source="tags"/>-->
-<!--新语法包含了<Tags :data-source.sync="tags"/>的功能，将$emit上的值传给tags-->
-    <Tags v-model:data-source="tags"/>
-
-    <Types/>
-  </Layout>
+    <Layout class-prefix="layout">
+      <NumberPad/>
+      <Notes/>
+      <Tags v-model:data-source="tags"/>
+      <Types/>
+    </Layout>
 </template>
 
-<script>
+<script lang="ts">
 import Layout from '@/components/Layout.vue';
 import NumberPad from '@/components/money/NumberPad.vue';
 import Notes from '@/components/money/Notes.vue';
@@ -20,10 +17,10 @@ import Types from '@/components/money/Types.vue';
 export default {
   name: 'Money',
   components: {Types, Tags, Notes, NumberPad, Layout},
-  data() {
-    return {
-      tags: ['衣', '食', '住', '行','吃','喝','玩','乐']
-    };
+  data(){
+    return{
+      tags:['衣','食','住','行']
+    }
   }
 };
 </script>
@@ -34,3 +31,4 @@ export default {
   flex-direction: column-reverse;
 }
 </style>
+

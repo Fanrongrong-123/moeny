@@ -1,8 +1,8 @@
 <template>
   <div>
     <ul class="types">
-      <li :class="type==='-' && 'selected'" @click="xxx('-')">支出</li>
-      <li :class="type==='+' && 'selected'" @click="xxx('+')">收入</li>
+      <li :class="type==='-' && 'selected'" @click="selectType('-')">支出</li>
+      <li :class="type==='+' && 'selected'" @click="selectType('+')">收入</li>
     </ul>
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
     }
   },
   methods: {
-    xxx(type) {
+    selectType(type) {
       if (type !== '-' && type !== '+') {
         throw new Error('type is unknown')
       }
