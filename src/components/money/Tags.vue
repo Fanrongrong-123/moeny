@@ -7,7 +7,7 @@
     <ul class="current">
       <li v-for="tag in dataSource" :key="tag"
           :class="{selected: selectedTags.indexOf(tag)>=0}"
-          @click="xxx(tag)">
+          @click="toggle(tag)">
         {{ tag }}
       </li>
     </ul>
@@ -24,7 +24,7 @@ export default {
     }
   },
   methods: {
-    xxx(tag) {
+    toggle(tag) {
       const index = this.selectedTags.indexOf(tag)
       if (index >= 0) {
         this.selectedTags.splice(index, 1)
