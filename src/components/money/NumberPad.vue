@@ -13,14 +13,14 @@
       <button @click="add">7</button>
       <button @click="add">8</button>
       <button @click="add">9</button>
-      <button class="ok" @click="OK">OK</button>
+      <button class="ok">OK</button>
       <button class="zero" @click="add">0</button>
       <button @click="add">.</button>
     </div>
   </div>
 </template>
 
-<script lang="ts">
+<script>
 export default {
   name: 'numberPad',
   data() {
