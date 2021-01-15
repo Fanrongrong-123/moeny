@@ -4,7 +4,9 @@
     <NumberPad @update:value="onUpdateAmount"/>
     <Notes @update:value="onUpdateNotes"/>
     <Tags v-model:data-source="tags" @update:selected="onUpdateTags"/>
-    <Types @update:value="onUpdateType"/>
+<!--    <Types :value="record.type" @update:value="onUpdateType"/>-->
+    <Types v-model:value="record.type"/>
+
   </Layout>
 </template>
 
@@ -36,9 +38,9 @@ export default {
       console.log(value)
 
     },
-    onUpdateType(value) {
-      this.record.type = value
-    },
+    // onUpdateType(value) {
+    //   this.record.type = value
+    // },
     onUpdateAmount(value) {
       this.record.amount = parseFloat(value)
     }

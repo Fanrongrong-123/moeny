@@ -1,8 +1,8 @@
 <template>
   <div>
     <ul class="types">
-      <li :class="type==='-' && 'selected'" @click="selectType('-')">支出</li>
-      <li :class="type==='+' && 'selected'" @click="selectType('+')">收入</li>
+      <li :class="value==='-' && 'selected'" @click="selectType('-')">支出</li>
+      <li :class="value==='+' && 'selected'" @click="selectType('+')">收入</li>
     </ul>
   </div>
 </template>
@@ -10,25 +10,15 @@
 <script>
 export default {
   name: 'Types',
-  data() {
-    return {
-      type: '-'  //'-'为支出 '+'为收入，type只能是其中之一
-    }
-  },
+  props: ['value'],
   methods: {
     selectType(type) {
       if (type !== '-' && type !== '+') {
         throw new Error('type is unknown')
       }
-      this.type = type
-    }
-  },
-  watch: {
-    type() {
-      this.$emit('update:value', this.type)
+      this.$emit('update:value', type)
     }
   }
-
 }
 </script>
 
