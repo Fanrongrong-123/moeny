@@ -31,6 +31,7 @@ export default {
       } else {
         this.selectedTags.push(tag)
       }
+      this.$emit('update:selected',this.selectedTags)
     },
     createTags() {
       const name = window.prompt('请输入你的标签名')

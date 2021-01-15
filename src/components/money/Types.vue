@@ -20,7 +20,12 @@ export default {
       if (type !== '-' && type !== '+') {
         throw new Error('type is unknown')
       }
-      return this.type = type
+      this.type = type
+    }
+  },
+  watch: {
+    type() {
+      this.$emit('update:value', this.type)
     }
   }
 

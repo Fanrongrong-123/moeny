@@ -13,7 +13,7 @@
       <button @click="add">7</button>
       <button @click="add">8</button>
       <button @click="add">9</button>
-      <button class="ok">OK</button>
+      <button class="ok" @click="ok">OK</button>
       <button class="zero" @click="add">0</button>
       <button @click="add">.</button>
     </div>
@@ -54,6 +54,9 @@ export default {
     clear() {
       this.output='0'
     },
+    ok(){
+      this.$emit('update:value',this.output)
+    }
   }
 };
 </script>

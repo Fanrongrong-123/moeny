@@ -15,6 +15,11 @@ export default {
     return {
       value: ''
     };
+  },
+  watch:{
+    value(){
+      this.$emit('update:value',this.value)
+    }
   }
 };
 </script>
