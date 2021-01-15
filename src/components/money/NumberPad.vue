@@ -26,39 +26,41 @@ export default {
   data() {
     return {
       output: '0'
-    };
+    }
   },
   methods: {
     add(e) {
-      const input = e.target.textContent;
-      if (this.output.length === 15) {return;}
+      const input = e.target.textContent
+      if (this.output.length === 15) {return}
       if (this.output === '0') {
         if ('0123456789'.indexOf(input) >= 0) {
-          this.output = input;
+          this.output = input
         } else {
-          this.output += input;
+          this.output += input
         }
-        return;
+        return
       }
-      if (input === '.' && this.output.indexOf('.') >= 0) {return;} else {
-        return this.output += input;
+      if (input === '.' && this.output.indexOf('.') >= 0) {return} else {
+        return this.output += input
       }
     },
     remove() {
       if (this.output.length === 1) {
-        this.output = '0';
+        this.output = '0'
       } else {
-        this.output = this.output.slice(0, -1);
+        this.output = this.output.slice(0, -1)
       }
     },
     clear() {
-      this.output='0'
+      this.output = '0'
     },
-    ok(){
-      this.$emit('update:value',this.output)
+    ok() {
+      this.$emit('update:value', this.output)
+      this.$emit('submit',this.output)
+      this.output = '0'
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
