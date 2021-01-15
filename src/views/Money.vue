@@ -1,5 +1,6 @@
 <template>
   <Layout class-prefix="layout">
+    {{ recordList }}
     <NumberPad @update:value="onUpdateAmount" @submit="saveRecord"/>
     <Notes @update:value="onUpdateNotes"/>
     <Tags v-model:data-source="tags" @update:selected="onUpdateTags"/>
@@ -24,7 +25,8 @@ export default {
     return {
       tags: ['衣', '食', '住', '行'],
       record: {notes: '', tags: [], type: '-', amount: 0, create: Date || undefined},
-      recordList: JSON.parse(window.localStorage.getItem(this.recordList)) || []
+      recordList: JSON.parse(window.localStorage.getItem('recordList')) || [],
+      version: window.localStorage.setItem('version', '1.0.0')
     }
   },
   methods: {
