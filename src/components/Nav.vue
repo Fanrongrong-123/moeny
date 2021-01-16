@@ -29,11 +29,13 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@/assets/style/helper.scss";
+
 nav {
   @extend %outerShadow;
   display: flex;
   flex-direction: row;
   font-size: 12px;
+
   > .item {
     display: flex;
     padding: 2px 0;
@@ -41,11 +43,14 @@ nav {
     justify-content: center;
     align-items: center;
     width: 33.333%;
+
     .icon {
       width: 32px;
       height: 32px;
+      border: 1px solid red;
     }
   }
+
   > .item.selected {
     color: $color-highlight;
   }
